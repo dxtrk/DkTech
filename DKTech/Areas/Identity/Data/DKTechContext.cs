@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DKTech.Areas.Identity.Data;
 
-public class  : IdentityDbContext<IdentityUser>
+public class DKTechContext : IdentityDbContext<IdentityUser>
 {
-    public (DbContextOptions<> options)
+    public DKTechContext(DbContextOptions<DKTechContext> options)
         : base(options)
     {
     }
