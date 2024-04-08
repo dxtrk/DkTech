@@ -23,6 +23,28 @@ namespace DKTech.Controllers
             return View();
         }
 
+        public IActionResult PCandLaptops()
+        {
+            return View();
+        }
+
+        public IActionResult PCPartss()
+        {
+            return View();
+        }
+
+        public IActionResult PCPeripheralsandAccessories()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUss()
+        {
+            return View();
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

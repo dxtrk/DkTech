@@ -29,7 +29,6 @@
     <Content Remove="Views\Home\AboutUs.cshtml" />
     <Content Remove="Views\Home\ContactUs.cshtml" />
     <Content Remove="Views\Home\Index1.cshtml" />
-    <Content Remove="Views\Home\Index2.cshtml" />
     <Content Remove="Views\Home\pc&amp;laptops.cshtml" />
     <Content Remove="Views\Home\PCParts.cshtml" />
     <Content Remove="Views\Home\PCPeripheral&amp;Accessories.cshtml" />

@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/Images/dk-tech-high-resolution-logo-transparent.png" alt="Sample Photo" width="200" />
@@ -25,6 +25,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item">
+                   
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,17 +34,17 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCandLaptops">PC & Laptops</a>
-                                <li><a class="dropdown-item" href="/Departments/PCParts">PC Parts</a></li>
-                                <li><a class="dropdown-item" href="/Departments/PCPeripherals">PC Peripherals & Accessories</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPartss">PC Parts</a> 
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPeripheralsandAccessories">PC Peripherals & Accessrories</a>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/ContactUs" tabindex="-1" aria-disabled="true">Contact Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUss">Contact Us</a>
                         </li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
                     </form>
                 </div>
 
