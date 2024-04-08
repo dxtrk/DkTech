@@ -14,7 +14,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Home\ContactUs.cshtml.cs" />
+    <Compile Remove="Views\Home\Index2.cshtml.cs" />
+    <Compile Remove="Views\Home\pc&amp;laptops.cshtml.cs" />
+    <Compile Remove="Views\Home\PCParts.cshtml.cs" />
+    <Compile Remove="Views\Home\PCPeripheral&amp;Accessories.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\AboutUs.cshtml" />
+    <Content Remove="Views\Home\ContactUs.cshtml" />
     <Content Remove="Views\Home\Index1.cshtml" />
+    <Content Remove="Views\Home\Index2.cshtml" />
+    <Content Remove="Views\Home\pc&amp;laptops.cshtml" />
+    <Content Remove="Views\Home\PCParts.cshtml" />
+    <Content Remove="Views\Home\PCPeripheral&amp;Accessories.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
