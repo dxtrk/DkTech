@@ -1,16 +1,79 @@
-﻿
-<!DOCTYPE html>
-<html lang
-    <head>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    </head>
     <style>
-body {
-    font-family: Cambria, serif;
-    color: black;
-}
-</style>
+        body {
+            font-family: Cambria, serif;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>Use the contact form below to get in touch. </p>
 
-    temp
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="contactNumber">Contact #:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
+
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var contactNumber = document.getElementById("contactNumber").value;
+            var message = document.getElementById("message").value;
+
+            // Here you can perform further validation if needed
+
+            // Prepare data to be sent to server (you can use AJAX or fetch for this)
+            var formData = {
+                name: name,
+                contactNumber: contactNumber,
+                email: email,
+                message: message
+            };
+
+            // For this example, just log the data to the console
+            console.log("Form data:", formData);
+
+            // You can also send the data to a server for processing using AJAX or fetch
+            // Example using fetch:
+            /*
+            fetch("url-to-your-server-endpoint", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                // Handle response
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+            */
+        });
+    </script>
+</body>
+</html>
