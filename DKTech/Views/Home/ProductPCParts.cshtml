@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Cambria, serif; /* Set font to Cambria */
+            color: #333; /* Set text color to dark */
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start; /* Align items at the start of the container */
+            position: relative; /* Position relative for absolute positioning */
+        }
+
+        .content {
+            display: flex; /* Display content flexibly */
+            align-items: flex-start; /* Align items at the start of the content */
+            padding: 20px;
+        }
+
+        img {
+            border-radius: 8px;
+            margin-right: 20px; /* Add space between image and text box */
+            height: 100%; /* Set image height to match text box */
+        }
+
+        .textbox {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 8px; /* Rounded corners */
+            box-sizing: border-box;
+            height: 100%; /* Match height with the image */
+        }
+
+        h2 {
+            margin-top: 0; /* Remove default margin for h2 */
+            font-size: 28px; /* Increase font size of heading */
+            font-weight: bold; /* Make heading bold */
+        }
+
+        .textbox p {
+            margin-bottom: 10px; /* Add spacing between text and button */
+            font-size: 24px; /* Increase font size of the price text */
+        }
+
+        .checkout-btn {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Add space between price and button */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <div>
+                <h2 style="font-size: 32px; font-weight: bold;">PC Parts</h2> <!-- Make text bold and slightly larger -->
+                <p>PRODUCT NAME</p>
+                <img src="~/Images/Framework-4k.png" alt="Paris" width="500" height="300">
+            </div>
+            <div class="textbox">
+                <h2>PRODUCT NAME</h2>
+                <p style="font-size: 30px;">$999</p> <!-- Increased font size of the price text -->
+                <!-- Add any other content you want to display -->
+                <button class="checkout-btn">Checkout</button> <!-- Checkout button -->
+            </div>
+        </div>
+    </div>PRODUCT DETAILS AND SPECIFICATIONS HERE :
+
+
+</body>
+</html>
+
