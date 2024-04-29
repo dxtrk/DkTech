@@ -58,6 +58,11 @@ namespace DKTech.Controllers
             return View();
         }
 
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
 
 
 
