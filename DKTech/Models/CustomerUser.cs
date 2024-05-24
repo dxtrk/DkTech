@@ -6,7 +6,7 @@ namespace DKTech.Models
     {
     }
 }
-public int ID { get; set; }
+public int CustomerUserID { get; set; }
 public string LastName { get; set; }
 public string FirstMidName { get; set; }
 [DataType(DataType.Date)]
@@ -16,3 +16,4 @@ public DateTime OrdersDate { get; set; }
 public ICollection<Orders> Orders { get; set; }
     }
 }
+ 
