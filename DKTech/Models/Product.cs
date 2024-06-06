@@ -5,25 +5,25 @@ using System.Security.Cryptography.Pkcs;
 
 namespace DKTech.Models
 {
-    public class Products
+    public class Product
     {
         [Key]
 
-        public int Product_ID { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
         [StringLength(100)]
-        public required string Product_Name { get; set; }
+        public string ProductName { get; set; }
 
         [ForeignKey("Category")]
 
-        public int Category_ID { get; set; }
+        public int CategoryID { get; set; }
         [Column(TypeName = "decimal(18,2)")]
 
         public decimal ListPrice { get; set; }
 
         public int Quantity { get; set; }
-        public required Category Category { get; set; }
+        public Category Category { get; set; }
     }
 }
 

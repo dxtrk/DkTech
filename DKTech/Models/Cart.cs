@@ -4,7 +4,7 @@ namespace DKTech.Models
 {
     public class Cart
     {
-        public int cart_id { get; set; }
+        public int CartID { get; set; }
         public int customer_id { get; set; } 
         public int product_id { get; set; }
         public int Quantity { get; set; }

@@ -7,14 +7,14 @@ namespace DKTech.Models
     public class Category
     {
 
-        public int Category_ID { get; set; }
+        public int CategoryID { get; set; }
 
 
         [Required]
         [StringLength(100)]
-        public required string Category_name { get; set; }
+        public string CategoryName { get; set; }
 
-        public required ICollection<Products> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
 

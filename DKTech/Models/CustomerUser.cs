@@ -5,7 +5,7 @@ namespace DKTech.Models
     public class CustomerUser
     {
 
-        public int CustomerUser_ID { get; set; }
+        public int CustomerID { get; set; }
         public string Last_Name { get; set; }
         public string FirstMidName { get; set; }
         [DataType(DataType.Date)]
