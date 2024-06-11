@@ -2,7 +2,7 @@
 
 namespace DKTech.Models
 {
-    public class CustomerUser
+    public class Customer
     {
 
         public int CustomerID { get; set; }
