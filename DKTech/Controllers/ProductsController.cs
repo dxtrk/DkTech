@@ -22,7 +22,7 @@ namespace DKTech.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            var dKTechContext = _context.Product.Include(p => p.Category);
+            var dKTechContext = _context.Product.Include(p => p.Department);
             return View(await dKTechContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace DKTech.Controllers
             }
 
             var product = await _context.Product
-                .Include(p => p.Category)
+                .Include(p => p.Department)
                 .FirstOrDefaultAsync(m => m.ProductID == id);
             if (product == null)
             {
@@ -48,7 +48,7 @@ namespace DKTech.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName");
+            ViewData["DepartmentID"] = new SelectList(_context.Department, "DepartmentID", "DepartmentName");
             return View();
         }
 
@@ -57,15 +57,15 @@ namespace DKTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID,ProductName,CategoryID,ListPrice,Quantity")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductName,DepartmentID,ListPrice,Quantity")] Product product)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName", product.CategoryID);
+            ViewData["DepartmentID"] = new SelectList(_context.Department, "DepartmentID", "DepartmentName", product.DepartmentID);
             return View(product);
         }
 
@@ -82,7 +82,7 @@ namespace DKTech.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName", product.CategoryID);
+            ViewData["DepartmentID"] = new SelectList(_context.Department, "DepartmentID", "DepartmentName", product.DepartmentID);
             return View(product);
         }
 
@@ -91,14 +91,14 @@ namespace DKTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,CategoryID,ListPrice,Quantity")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,DepartmentID,ListPrice,Quantity")] Product product)
         {
             if (id != product.ProductID)
             {
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
@@ -118,7 +118,7 @@ namespace DKTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "CategoryName", product.CategoryID);
+            ViewData["DepartmentID"] = new SelectList(_context.Department, "DepartmentID", "DepartmentName", product.DepartmentID);
             return View(product);
         }
 
@@ -131,7 +131,7 @@ namespace DKTech.Controllers
             }
 
             var product = await _context.Product
-                .Include(p => p.Category)
+                .Include(p => p.Department)
                 .FirstOrDefaultAsync(m => m.ProductID == id);
             if (product == null)
             {

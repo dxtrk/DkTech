@@ -15,15 +15,15 @@ namespace DKTech.Models
         [StringLength(100)]
         public string ProductName { get; set; }
 
-        [ForeignKey("Category")]
+        [ForeignKey("Department")]
 
-        public int CategoryID { get; set; }
+        public int DepartmentID { get; set; }
         [Column(TypeName = "decimal(18,2)")]
 
         public decimal ListPrice { get; set; }
 
         public int Quantity { get; set; }
-        public Category Category { get; set; }
+        public required Department Department { get; set; }
     }
 }
 

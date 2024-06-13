@@ -20,7 +20,7 @@ public class DKTechContext : IdentityDbContext<IdentityUser>
         // Add your customizations after calling base.OnModelCreating(builder);
     }
 
-public DbSet<DKTech.Models.Category> Category { get; set; } = default!;
+public DbSet<DKTech.Models.Department> Department { get; set; } = default!;
 
 public DbSet<DKTech.Models.Product> Product { get; set; } = default!;
 }

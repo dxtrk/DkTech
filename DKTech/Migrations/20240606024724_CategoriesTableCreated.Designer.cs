@@ -25,22 +25,22 @@ namespace DKTech.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DKTech.Models.Category", b =>
+            modelBuilder.Entity("DKTech.Models.Department", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("DepartmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
 
-                    b.Property<string>("CategoryName")
+                    b.Property<string>("DepartmentName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("CategoryID");
+                    b.HasKey("DepartmentID");
 
-                    b.ToTable("Category");
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("DKTech.Models.Product", b =>
@@ -51,7 +51,7 @@ namespace DKTech.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"));
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("ListPrice")
@@ -67,7 +67,7 @@ namespace DKTech.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.HasIndex("CategoryID");
+                    b.HasIndex("DepartmentID");
 
                     b.ToTable("Product");
                 });
@@ -276,13 +276,13 @@ namespace DKTech.Migrations
 
             modelBuilder.Entity("DKTech.Models.Product", b =>
                 {
-                    b.HasOne("DKTech.Models.Category", "Category")
+                    b.HasOne("DKTech.Models.Department", "Department")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryID")
+                        .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -336,7 +336,7 @@ namespace DKTech.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DKTech.Models.Category", b =>
+            modelBuilder.Entity("DKTech.Models.Department", b =>
                 {
                     b.Navigation("Products");
                 });
