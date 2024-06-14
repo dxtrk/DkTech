@@ -23,5 +23,13 @@ public class DKTechContext : IdentityDbContext<IdentityUser>
 public DbSet<DKTech.Models.Department> Department { get; set; } = default!;
 
 public DbSet<DKTech.Models.Product> Product { get; set; } = default!;
+    public DbSet<DKTech.Models.Order> Order { get; set; } = default!;
+    public DbSet<DKTech.Models.Cart> Cart { get; set; } = default!;
+
+public DbSet<DKTech.Models.Customer> Customer { get; set; } = default!;
+
+public DbSet<DKTech.Models.Payment> Payment { get; set; } = default!;
+
+
 }
  

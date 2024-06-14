@@ -4,10 +4,13 @@ namespace DKTech.Models
 {
     public class Payment
     {
-        public int payment_id { get; set; }
-        public int customer_id { get; set; }
-        public int pay_amount { get; set; }
-        public string pay_method { get; set; }
-        public DateTime pay_date { get; set; }
+        public int PaymentID { get; set; }
+        public int CustomerID { get; set; }
+        public int PayAmount { get; set; }
+        public string PayMethod { get; set; }
+        public DateTime PayDate { get; set; }
+        public int OrderID { get; set; }
+        public Order Order { get; set; }
+
     }
 }

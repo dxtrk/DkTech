@@ -24,6 +24,7 @@ namespace DKTech.Models
 
         public int Quantity { get; set; }
         public required Department Department { get; set; }
+        public ICollection<Cart> Carts { get; set; }
     }
 }
 

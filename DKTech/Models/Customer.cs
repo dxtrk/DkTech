@@ -12,7 +12,8 @@ namespace DKTech.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Order_date { get; set; }
 
-        public ICollection<Orders> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
+
 
     }
 }
