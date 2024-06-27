@@ -59,7 +59,7 @@ namespace DKTech.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("OrderID,CustomerID,OrderDate,PickupDate")] Order order)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
@@ -98,7 +98,7 @@ namespace DKTech.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {

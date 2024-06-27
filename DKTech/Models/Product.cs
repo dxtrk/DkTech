@@ -23,7 +23,7 @@ namespace DKTech.Models
         public decimal ListPrice { get; set; }
 
         public int Quantity { get; set; }
-        public required Department Department { get; set; }
+        public  Department Department { get; set; }
         public ICollection<Cart> Carts { get; set; }
     }
 }
