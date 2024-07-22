@@ -5,6 +5,7 @@ namespace DKTech.Models
 {
     public class Order
     {
+        //The Primary key attribute, shows SQL server that OrderID is the primary class of this field.
         [Key]
         public int OrderID { get; set; }
         public int CustomerID { get; set; }

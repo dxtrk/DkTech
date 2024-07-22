@@ -21,7 +21,7 @@ namespace DKTech.Models
         [Column(TypeName = "decimal(18,2)")]
 
         public decimal ListPrice { get; set; }
-
+        [Range(1, 9)]
         public int Quantity { get; set; }
         public  Department Department { get; set; }
         public ICollection<Cart> Carts { get; set; }
