@@ -11,10 +11,10 @@ namespace DKTech.Models
         //The "Key" attribute tells SQL server, for e.g. "CartID" field is the primary of this class
         [Key]
         public int CartID { get; set; }
-        //"The "Range" attribute, ranges the numbers from 1 - 9 to prevent negative numbers.
-        [Range(1,9)] 
+        //"The "Range" attribute, ranges the numbers from 0 - 1000 to prevent negative numbers.
+        [Range(0,1000)] 
         public int Quantity { get; set; }
-        [Range(1, 9)]
+        [Range(1, 10000)]
         public decimal TotalPrice { get; set; }
 
 
