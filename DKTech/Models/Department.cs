@@ -9,6 +9,7 @@ namespace DKTech.Models
 
         [Required]
         [StringLength(100)]
+        [Display(Name = "Department Name")]
         public string DepartmentName { get; set; }
 
         public ICollection<Product> Products { get; set; }
