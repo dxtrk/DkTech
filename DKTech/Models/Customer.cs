@@ -14,8 +14,9 @@ namespace DKTech.Models
         public string FirstMidName { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-
-        public DateTime Order_date { get; set; }
+        [Display(Name = "Order Date")]
+        DateTime MinDate = DateTime.Now;
+        public DateTime OrderDate { get; set; }
 
         public ICollection<Order> Orders { get; set; }
 

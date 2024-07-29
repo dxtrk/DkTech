@@ -12,12 +12,13 @@ namespace DKTech.Models
         [Key]
         public int CartID { get; set; }
         //"The "Range" attribute, ranges the numbers from 0 - 1000 to prevent negative numbers.
-        [Range(0,1000)] 
+        [Range(0,100)] 
         public int Quantity { get; set; }
         [Range(1, 10000)]
+        [Display (Name = "Total Price")]
         public decimal TotalPrice { get; set; }
 
-
+        [Display(Name = "Customer ID")]
         public int CustomerID { get; set; }
         public Customer Customer { get; set; }
         // The "ForeignKey" attribute tells SQL server that, the Product class is a Foreign class. 
