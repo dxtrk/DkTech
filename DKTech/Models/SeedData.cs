@@ -9,7 +9,7 @@ namespace DKTech.Models
     {
         internal static async Task Initialize(IServiceProvider services, string? testUserPw)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

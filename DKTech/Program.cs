@@ -4,7 +4,7 @@ using DKTech.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
 using DKTech.Models;
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Connection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("Connection") ?? throw new InvalidOperationException("Connection string 'Connection' not found.");
 
 builder.Services.AddDbContext<DKTechContext>(options => options.UseSqlServer(connectionString));
 

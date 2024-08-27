@@ -24,5 +24,25 @@ public class Contact
         Approved,
         Rejected
     }
+    public static void SeedDB(ApplicationDbContext context, string adminID)
+{
+    if (context.Contact.Any())
+    {
+        return;   // DB has been seeded
+    }
 
+    context.Contact.AddRange(
+        new Contact
+        {
+            Name = "Debra Garcia",
+            Address = "1234 Main St",
+            City = "Redmond",
+            State = "WA",
+            Zip = "10999",
+            Email = "ac116595@avcol.school.nz",
+            Status = ContactStatus.Approved,
+            OwnerID = adminID
+        },
 }
+
+
