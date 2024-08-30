@@ -10,19 +10,12 @@ builder.Services.AddDbContext<DKTechContext>(options => options.UseSqlServer(con
 
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-        .AddRoles<IdentityRole>()
-
-    .AddEntityFrameworkStores<DKTechContext>();
+        .AddEntityFrameworkStores<DKTechContext>();
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddAuthorization(options =>
-{
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-});
+
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
