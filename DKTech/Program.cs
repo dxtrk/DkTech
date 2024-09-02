@@ -29,7 +29,7 @@ using (var scope = app.Services.CreateScope())
 
     var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW");
 
-    await SeedData.Initialize(services, testUserPw);
+   
 }
 
 // Configure the HTTP request pipeline.
@@ -52,42 +52,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
-using (var scope = app.Services.CreateScope())
-{
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var roles = new[] { "Admin", "Manager", "User" };
 
-    foreach (var role in roles)
-    {
-        if (!await roleManager.RoleExistsAsync(role))
-            await roleManager.CreateAsync(new IdentityRole(role));
-    }
-}
-using (var scope = app.Services.CreateScope())
-{
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Admin>>();
-
-    string FirstName = "Admin";
-    string LastName = "MBHS";
-    DateTime DateOfBirth = new DateTime(2000, 1, 1);
-    string email = "principal@mbhs.com";
-    string password = "Passw0rd!";
-
-    if (await userManager.FindByEmailAsync(email) == null)
-    {
-        var user = new Teacher();
-        user.UserName = email;
-        user.Email = email;
-        user.FirstName = FirstName;
-        user.LastName = LastName;
-        user.DateOfBirth = DateOfBirth;
-
-        await userManager.CreateAsync(user, password);
-
-        await userManager.AddToRoleAsync(user, "Admin");
-        await userManager.AddToRoleAsync(user, "Manager");
-        await userManager.AddToRoleAsync(user, "User");
-    }
-
-}
 app.Run();
