@@ -16,6 +16,10 @@ namespace DKTech.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Order Date")]
         DateTime MinDate = DateTime.Now;
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Please Enter Email ID")]
+        [RegularExpressions]
+        public string Email { get; set; }
         public DateTime OrderDate { get; set; }
 
         public ICollection<Order> Orders { get; set; }

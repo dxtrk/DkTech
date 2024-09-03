@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using DKTech.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
 using DKTech.Models;
+using NuGet.DependencyResolver;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Connection") ?? throw new InvalidOperationException("Connection string 'Connection' not found.");
 
@@ -52,5 +53,42 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "Manager", "User" };
 
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new IdentityRole(role));
+    }
+}
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Customer>>();
+
+    string FirstName = "Admin";
+    string LastName = "MBHS";
+    DateTime DateOfBirth = new DateTime(2000, 1, 1);
+    string email = "principal@mbhs.com";
+    string password = "Passw0rd!";
+
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new Customer();
+   
+        user.Email = email;
+        user.FirstMidName = FirstName;
+        user.Last_Name = LastName;
+     
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddToRoleAsync(user, "Admin");
+        await userManager.AddToRoleAsync(user, "Manager");
+        await userManager.AddToRoleAsync(user, "User");
+    }
+
+}
 app.Run();
