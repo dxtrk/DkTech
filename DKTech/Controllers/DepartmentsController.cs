@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DKTech.Areas.Identity.Data;
 using DKTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DKTech.Controllers
 {
+    [Authorize]
     public class DepartmentsController : Controller
     {
         private readonly DKTechContext _context;

@@ -54,41 +54,41 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 using (var scope = app.Services.CreateScope())
-{
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var roles = new[] { "Admin", "Manager", "User" };
+//{
+//    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+//    var roles = new[] { "Admin", "Manager", "User" };
 
-    foreach (var role in roles)
-    {
-        if (!await roleManager.RoleExistsAsync(role))
-            await roleManager.CreateAsync(new IdentityRole(role));
-    }
-}
-using (var scope = app.Services.CreateScope())
-{
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Customer>>();
+//    foreach (var role in roles)
+//    {
+//        if (!await roleManager.RoleExistsAsync(role))
+//            await roleManager.CreateAsync(new IdentityRole(role));
+//    }
+//}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
 
-    string FirstName = "Admin";
-    string LastName = "MBHS";
-    DateTime DateOfBirth = new DateTime(2000, 1, 1);
-    string email = "principal@mbhs.com";
-    string password = "Passw0rd!";
+//    string FirstName = "Dexter";
+//    string LastName = "Ku";
+//    DateTime DateOfBirth = new DateTime(2000, 1, 1);
+//    string email = "dexterku@gmail.com";
+//    string password = "Sweethome49";
 
-    if (await userManager.FindByEmailAsync(email) == null)
-    {
-        var user = new Customer();
+//    if (await userManager.FindByEmailAsync(email) == null)
+//    {
+//        var user = new User();
    
-        user.Email = email;
-        user.FirstMidName = FirstName;
-        user.Last_Name = LastName;
+//        user.Email = email;
+//        user.FirstName = FirstName;
+//        user.LastName = LastName;
      
 
-        await userManager.CreateAsync(user, password);
+//        await userManager.CreateAsync(user, password);
 
-        await userManager.AddToRoleAsync(user, "Admin");
-        await userManager.AddToRoleAsync(user, "Manager");
-        await userManager.AddToRoleAsync(user, "User");
-    }
+//        await userManager.AddToRoleAsync(user, "Admin");
+//        await userManager.AddToRoleAsync(user, "Employee");
+//        await userManager.AddToRoleAsync(user, "Customer");
+//    }
 
-}
+//}
 app.Run();
