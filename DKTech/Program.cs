@@ -11,7 +11,15 @@ builder.Services.AddDbContext<DKTechContext>(options => options.UseSqlServer(con
 
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-        .AddEntityFrameworkStores<DKTechContext>();
+    .AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>()
+
+    .AddEntityFrameworkStores<DKTechContext>();
+        
+        
+        
+        
+
 
 
 // Add services to the container.

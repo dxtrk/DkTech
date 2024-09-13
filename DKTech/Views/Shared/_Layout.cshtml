@@ -42,30 +42,34 @@
                         </li>
 
 
+                        @if (User.IsInRole("Admin"))
+                        {
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Departments
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCandLaptops">PC & Laptops</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPartss">PC Parts</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPeripheralsandAccessories">PC Peripherals & Accessories</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Departments" asp-action="Index">Departments</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Payments" asp-action="Index">Payment</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Customers" asp-action="Index">Customers</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Departments
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCandLaptops">PC & Laptops</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPartss">PC Parts</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="PCPeripheralsandAccessories">PC Peripherals & Accessories</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Departments" asp-action="Index">Departments</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Payments" asp-action="Index">Payment</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Customers" asp-action="Index">Customers</a></li>
 
 
 
 
 
-                            </ul>
-                        </li>
+
+                                </ul>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUss">Contact Us</a>
                         </li>
