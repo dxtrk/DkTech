@@ -17,7 +17,7 @@ namespace DKTech.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -326,15 +326,15 @@ namespace DKTech.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f4e6ff19-cafa-4711-8324-e4177d3de7d5",
+                            ConcurrencyStamp = "9b71f81f-57d3-4ab9-ae8d-623fcb9e1917",
                             Email = "admin123@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN123@GMAIL.COM",
                             NormalizedUserName = "ADMIN123@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEC/U+LIGGRd+D3N2ChGcQqXVjUTVuA7FGLNHfM/YwoI4FFGu8PSZlbtGiZEt/Pj5A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJHhARpdabris7ypJ39a6PIlwUaGO3134l23BSnNeGoJ/HN2jK57CGvxPyP2k7oIwg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b5ff7112-1a66-468e-a31a-a976b08b2686",
+                            SecurityStamp = "1a3183fc-9245-47cb-a633-33891c3309bb",
                             TwoFactorEnabled = false,
                             UserName = "admin123@gmail.com"
                         },
@@ -342,15 +342,15 @@ namespace DKTech.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5fda5ad5-2958-47ca-bd94-f3cb858316e5",
+                            ConcurrencyStamp = "87404aa7-f6fd-4785-b019-a30df40d2b14",
                             Email = "employee123@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "EMPLOYEE123@GMAIL.COM",
                             NormalizedUserName = "EMPLOYEE123@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEGoQDnLMsgBLM/LoeDpYKGLHYd+vDbTY10871dfc0I68qi3F+a+C/MUbDyFsWtPtw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMivGQVPjjx+sCwgW0RAdaagC/ALu4BUq87pXVKH6tAY+e4RLVTRYER6/8bZbhgNqQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "36556e13-8687-407e-bca9-4ce58658d323",
+                            SecurityStamp = "f4ef8816-a420-4585-b698-dc6ed2f52f90",
                             TwoFactorEnabled = false,
                             UserName = "employee123@gmail.com"
                         });

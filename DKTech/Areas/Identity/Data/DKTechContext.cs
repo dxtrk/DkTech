@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using DKTech.Models;
-using DKTech.Migrations;
+
 
 namespace DKTech.Areas.Identity.Data;
 

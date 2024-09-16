@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DKTech.Migrations
 {
     [DbContext(typeof(DKTechContext))]
-    [Migration("20240627024513_PaymentTablesCreated")]
-    partial class PaymentTablesCreated
+    [Migration("20240916225409_UpdatedTables")]
+    partial class UpdatedTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -72,6 +72,10 @@ namespace DKTech.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstMidName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -80,7 +84,7 @@ namespace DKTech.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Order_date")
+                    b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("CustomerID");
@@ -215,6 +219,20 @@ namespace DKTech.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "Staff",
+                            NormalizedName = "STAFF"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -305,6 +323,40 @@ namespace DKTech.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "9b71f81f-57d3-4ab9-ae8d-623fcb9e1917",
+                            Email = "admin123@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN123@GMAIL.COM",
+                            NormalizedUserName = "ADMIN123@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJHhARpdabris7ypJ39a6PIlwUaGO3134l23BSnNeGoJ/HN2jK57CGvxPyP2k7oIwg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "1a3183fc-9245-47cb-a633-33891c3309bb",
+                            TwoFactorEnabled = false,
+                            UserName = "admin123@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "87404aa7-f6fd-4785-b019-a30df40d2b14",
+                            Email = "employee123@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EMPLOYEE123@GMAIL.COM",
+                            NormalizedUserName = "EMPLOYEE123@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMivGQVPjjx+sCwgW0RAdaagC/ALu4BUq87pXVKH6tAY+e4RLVTRYER6/8bZbhgNqQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f4ef8816-a420-4585-b698-dc6ed2f52f90",
+                            TwoFactorEnabled = false,
+                            UserName = "employee123@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -369,6 +421,18 @@ namespace DKTech.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1",
+                            RoleId = "1"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "2"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
