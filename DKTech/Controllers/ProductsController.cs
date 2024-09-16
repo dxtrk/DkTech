@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DKTech.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly DKTechContext _context;

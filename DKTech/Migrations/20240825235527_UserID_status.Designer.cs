@@ -254,7 +254,9 @@ namespace DKTech.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("
+                        
+                        ")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 

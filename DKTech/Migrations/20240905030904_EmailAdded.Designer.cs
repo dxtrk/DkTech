@@ -12,7 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DKTech.Migrations
 {
     [DbContext(typeof(DKTechContext))]
-    [Migration("20240905030904_EmailAdded")]
+    [Migration("20240905030904_
+        Added")]
     partial class EmailAdded
     {
         /// <inheritdoc />

@@ -23,7 +23,8 @@ namespace DKTech.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "
+                ", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
                     { "1", 0, "f4e6ff19-cafa-4711-8324-e4177d3de7d5", "admin123@gmail.com", true, false, null, "ADMIN123@GMAIL.COM", "ADMIN123@GMAIL.COM", "AQAAAAIAAYagAAAAEEC/U+LIGGRd+D3N2ChGcQqXVjUTVuA7FGLNHfM/YwoI4FFGu8PSZlbtGiZEt/Pj5A==", null, false, "b5ff7112-1a66-468e-a31a-a976b08b2686", false, "admin123@gmail.com" },

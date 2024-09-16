@@ -6,9 +6,15 @@
 
 <h1>Cart</h1>
 
-<p>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+
     <a asp-action="Create">Create New</a>
-</p>
+    </p>
+}
+
 <table class="table">
     <thead>
         <tr>

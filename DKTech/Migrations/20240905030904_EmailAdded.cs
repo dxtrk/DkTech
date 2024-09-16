@@ -5,7 +5,8 @@
 namespace DKTech.Migrations
 {
     /// <inheritdoc />
-    public partial class EmailAdded : Migration
+    public partial class 
+        Added : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

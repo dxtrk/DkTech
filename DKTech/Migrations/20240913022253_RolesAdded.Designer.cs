@@ -72,7 +72,8 @@ namespace DKTech.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
 
-                    b.Property<string>("Email")
+                    b.Property<string>("
+                        ")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
