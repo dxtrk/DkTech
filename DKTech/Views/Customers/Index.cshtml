@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Customers</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -17,6 +17,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstMidName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.OrderDate)
@@ -34,6 +37,9 @@
                 @Html.DisplayFor(modelItem => item.FirstMidName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
             <td>
@@ -46,7 +52,6 @@
     </tbody>
 </table>
 <style>
-
     body {
         font-family: Cambria, serif;
         color: black;

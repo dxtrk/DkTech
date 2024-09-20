@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DKTech.Areas.Identity.Data;
 using DKTech.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace DKTech.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class CustomersController : Controller
     {
         private readonly DKTechContext _context;
@@ -56,7 +54,7 @@ namespace DKTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerID,Last_Name,FirstMidName,Order_date")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerID,Last_Name,FirstMidName,Email,OrderDate")] Customer customer)
         {
             if (!ModelState.IsValid)
             {
@@ -88,7 +86,7 @@ namespace DKTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerID,Last_Name,FirstMidName,Order_date")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerID,Last_Name,FirstMidName,Email,OrderDate")] Customer customer)
         {
             if (id != customer.CustomerID)
             {

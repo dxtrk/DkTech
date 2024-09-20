@@ -20,7 +20,7 @@ namespace DKTech.Models
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Please Enter Email ID")]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is not valid.")]
-        public string Email { get; set; }
+        public string Email { get; set; } 
         public DateTime OrderDate { get; set; }
 
         public ICollection<Order> Orders { get; set; }

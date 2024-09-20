@@ -46,7 +46,7 @@ namespace DKTech.Controllers
 
             return View(cart);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Carts/Create
         public IActionResult Create()
         {
