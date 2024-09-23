@@ -1,40 +1,50 @@
 ﻿@model IEnumerable<DKTech.Models.Department>
 
 @{
+    // Sets the title of the page to "Index"
     ViewData["Title"] = "Index";
 }
 
 <h1>Departments</h1>
 
 <p>
+    <!-- Link to create a new department -->
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
+                <!-- Displays the header for the DepartmentName column -->
                 @Html.DisplayNameFor(model => model.DepartmentName)
             </th>
-            <th></th>
+            <th></th> <!-- Placeholder for action links -->
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DepartmentID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DepartmentID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DepartmentID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <!-- Displays the DepartmentName for each department in the list -->
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    <!-- Links for editing, viewing details, and deleting a department -->
+                    <a asp-action="Edit" asp-route-id="@item.DepartmentID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DepartmentID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DepartmentID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
 <style>
+    /* Custom styles for the body */
     body {
-        font-family: Cambria, serif;
-        color: black;
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
     }
+</style>

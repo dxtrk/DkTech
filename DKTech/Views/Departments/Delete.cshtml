@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Department
 
 @{
+    // Sets the title of the page to "Delete"
     ViewData["Title"] = "Delete";
 }
 
@@ -11,22 +12,31 @@
     <h4>Department</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Displays the label for DepartmentName -->
             @Html.DisplayNameFor(model => model.DepartmentName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Displays the value of DepartmentName -->
             @Html.DisplayFor(model => model.DepartmentName)
         </dd>
     </dl>
-    
+
+    <!-- Form to confirm deletion of the department -->
     <form asp-action="Delete">
+        <!-- Hidden field to pass the DepartmentID -->
         <input type="hidden" asp-for="DepartmentID" />
+        <!-- Submit button to confirm deletion -->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <!-- Link to navigate back to the list of departments -->
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
 <style>
+    /* Custom styles for the body */
     body {
-        font-family: Cambria, serif;
-        color: black;
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
     }
+</style>

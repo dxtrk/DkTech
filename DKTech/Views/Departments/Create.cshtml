@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Department
 
 @{
+    // Sets the title of the page to "Create"
     ViewData["Title"] = "Create";
 }
 
@@ -10,14 +11,22 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <!-- Form to create a new department -->
         <form asp-action="Create">
+            <!-- Displays validation summary for model errors -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
+                <!-- Label for the DepartmentName input field -->
                 <label asp-for="DepartmentName" class="control-label"></label>
+                <!-- Input field for DepartmentName -->
                 <input asp-for="DepartmentName" class="form-control" />
+                <!-- Displays validation error for DepartmentName -->
                 <span asp-validation-for="DepartmentName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
+                <!-- Submit button to create the department -->
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -25,14 +34,21 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the department list -->
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-<style>
-    body {
-        font-family: Cambria, serif;
-        color: black;
+        // Partial view for client-side validation scripts
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
+
+<style>
+    /* Custom styles for the body */
+    body {
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
+    }
+</style>

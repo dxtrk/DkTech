@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Cart
 
 @{
+    // Sets the title of the page
     ViewData["Title"] = "Delete";
 }
 
@@ -11,34 +12,47 @@
     <h4>Cart</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <!-- Displaying the Quantity of items in the cart -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quantity)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Displaying the Total Price of the cart -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TotalPrice)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TotalPrice)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Displaying the Customer ID associated with the cart -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Customer)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Customer.CustomerID)
         </dd>
     </dl>
-    
+
+    <!-- Form to confirm deletion -->
     <form asp-action="Delete">
+        <!-- Hidden input to store CartID for deletion -->
         <input type="hidden" asp-for="CartID" />
+
+        <!-- Submit button to confirm deletion -->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <!-- Link to navigate back to the list of carts -->
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
 <style>
+    /* Custom styles for the body */
     body {
-        font-family: Cambria, serif;
-        color: black;
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
     }
+</style>

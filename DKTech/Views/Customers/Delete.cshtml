@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Customer
 
 @{
+    // Sets the title of the page to "Delete"
     ViewData["Title"] = "Delete";
 }
 
@@ -11,41 +12,56 @@
     <h4>Customer</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <!-- Displaying Last Name -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Last_Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Last_Name)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Displaying First Name -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FirstMidName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FirstMidName)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Displaying Email -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class = "col-sm-2">
+
+        <!-- Displaying Order Date -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
     </dl>
-    
+
+    <!-- Form to confirm deletion -->
     <form asp-action="Delete">
+        <!-- Hidden field to hold the CustomerID for deletion -->
         <input type="hidden" asp-for="CustomerID" />
+
+        <!-- Submit button to confirm deletion -->
         <input type="submit" value="Delete" class="btn btn-danger" /> |
+
+        <!-- Link to navigate back to the customer list -->
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
-<style>
-    body {
-        font-family: Cambria, serif;
-        color: black;
-    }
 
+<style>
+    /* Custom styles for the body */
+    body {
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
+    }
+</style>

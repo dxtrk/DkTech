@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Customer
 
 @{
+    // Sets the title of the page to "Create"
     ViewData["Title"] = "Create";
 }
 
@@ -10,28 +11,40 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <!-- Form to create a new customer -->
         <form asp-action="Create">
+            <!-- Display validation summary for model-only errors -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Input field for Last Name -->
             <div class="form-group">
                 <label asp-for="Last_Name" class="control-label"></label>
                 <input asp-for="Last_Name" class="form-control" />
                 <span asp-validation-for="Last_Name" class="text-danger"></span>
             </div>
+
+            <!-- Input field for First Name -->
             <div class="form-group">
                 <label asp-for="FirstMidName" class="control-label"></label>
                 <input asp-for="FirstMidName" class="form-control" />
                 <span asp-validation-for="FirstMidName" class="text-danger"></span>
             </div>
+
+            <!-- Input field for Email -->
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <!-- Input field for Order Date -->
             <div class="form-group">
                 <label asp-for="OrderDate" class="control-label"></label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
+
+            <!-- Submit button to create the customer -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -40,15 +53,21 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the customer list -->
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-<style>
-    body {
-        font-family: Cambria, serif;
-        color: black;
+        // Render partial view for client-side validation scripts
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
 
+<style>
+    /* Custom styles for the body */
+    body {
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
+    }
+</style>

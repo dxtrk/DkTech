@@ -1,23 +1,24 @@
 ﻿@model IEnumerable<DKTech.Models.Cart>
 
 @{
+    // Sets the title of the page
     ViewData["Title"] = "Index";
 }
 
 <h1>Cart</h1>
 
-
 @if (User.IsInRole("Admin"))
 {
     <p>
-
-    <a asp-action="Create">Create New</a>
+        <!-- Link to create a new cart, visible only to admin users -->
+        <a asp-action="Create">Create New</a>
     </p>
 }
 
 <table class="table">
     <thead>
         <tr>
+            <!-- Table headers for Quantity, Total Price, and Customer -->
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
@@ -27,32 +28,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customer)
             </th>
-            <th></th>
+            <th></th> <!-- Empty header for action links -->
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.CustomerID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CartID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CartID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CartID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <!-- Display each cart's Quantity -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <!-- Display each cart's Total Price -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <!-- Display the Customer ID associated with the cart -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerID)
+                </td>
+                <td>
+                    <!-- Action links for Edit, Details, and Delete -->
+                    <a asp-action="Edit" asp-route-id="@item.CartID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CartID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CartID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
 <style>
+    /* Custom styles for the body */
     body {
-        font-family: Cambria, serif;
-        color: black;
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
     }
+</style>

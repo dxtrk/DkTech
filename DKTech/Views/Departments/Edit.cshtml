@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Department
 
 @{
+    // Sets the title of the page to "Edit"
     ViewData["Title"] = "Edit";
 }
 
@@ -11,14 +12,20 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+            <!-- Summary for validation errors, if any -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Hidden input for the DepartmentID -->
             <input type="hidden" asp-for="DepartmentID" />
             <div class="form-group">
+                <!-- Label for DepartmentName -->
                 <label asp-for="DepartmentName" class="control-label"></label>
+                <!-- Input field for DepartmentName -->
                 <input asp-for="DepartmentName" class="form-control" />
+                <!-- Validation message for DepartmentName -->
                 <span asp-validation-for="DepartmentName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Submit button to save changes -->
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -26,14 +33,21 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the list of departments -->
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-<style>
-    body {
-        font-family: Cambria, serif;
-        color: black;
+        // Renders partial view for validation scripts
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
+
+<style>
+    /* Custom styles for the body */
+    body {
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
+    }
+</style>

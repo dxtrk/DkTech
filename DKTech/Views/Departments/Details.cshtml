@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Department
 
 @{
+    // Sets the title of the page to "Details"
     ViewData["Title"] = "Details";
 }
 
@@ -10,20 +11,27 @@
     <h4>Department</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            <!-- Displays the label for DepartmentName -->
             @Html.DisplayNameFor(model => model.DepartmentName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            <!-- Displays the value of DepartmentName -->
             @Html.DisplayFor(model => model.DepartmentName)
         </dd>
     </dl>
 </div>
 <div>
+    <!-- Link to navigate to the Edit page for this department -->
     <a asp-action="Edit" asp-route-id="@Model?.DepartmentID">Edit</a> |
+    <!-- Link to navigate back to the list of departments -->
     <a asp-action="Index">Back to List</a>
 </div>
+
 <style>
+    /* Custom styles for the body */
     body {
-        font-family: Cambria, serif;
-        color: black;
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
     }
+</style>

@@ -1,6 +1,7 @@
 ﻿@model DKTech.Models.Cart
 
 @{
+    // Sets the title of the page
     ViewData["Title"] = "Edit";
 }
 
@@ -10,24 +11,36 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <!-- Form to edit cart details -->
         <form asp-action="Edit">
+            <!-- Summary of model validation errors, if any -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Hidden field to store the CartID for the form submission -->
             <input type="hidden" asp-for="CartID" />
+
+            <!-- Input field for Quantity -->
             <div class="form-group">
                 <label asp-for="Quantity" class="control-label"></label>
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
+
+            <!-- Input field for Total Price -->
             <div class="form-group">
                 <label asp-for="TotalPrice" class="control-label"></label>
                 <input asp-for="TotalPrice" class="form-control" />
                 <span asp-validation-for="TotalPrice" class="text-danger"></span>
             </div>
+
+            <!-- Dropdown for selecting Customer ID -->
             <div class="form-group">
                 <label asp-for="CustomerID" class="control-label"></label>
                 <select asp-for="CustomerID" class="form-control" asp-items="ViewBag.CustomerID"></select>
                 <span asp-validation-for="CustomerID" class="text-danger"></span>
             </div>
+
+            <!-- Submit button to save changes -->
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -36,14 +49,21 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the list of carts -->
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-<style>
-    body {
-        font-family: Cambria, serif;
-        color: black;
+        // Include validation scripts for client-side validation
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
+
+<style>
+    /* Custom styles for the body */
+    body {
+        font-family: Cambria, serif; /* Font style */
+        color: black; /* Font color */
+    }
+</style>
