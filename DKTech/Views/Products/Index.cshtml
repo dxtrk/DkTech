@@ -17,6 +17,7 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.ProductName)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ProductName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ListPrice)
@@ -25,6 +26,7 @@
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.ProductID)</a>
                 @Html.DisplayNameFor(model => model.Department)
             </th>
             <th></th>

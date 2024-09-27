@@ -24,11 +24,31 @@ namespace DKTech.Controllers
         }
 
         // GET: Products - Displays a list of products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var dKTechContext = _context.Product.Include(p => p.Department); // Include related department data
-            return View(await dKTechContext.ToListAsync()); // Return the list of products to the view
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "ProductName" : "";
+            ViewData["DateSortParm"] = sortOrder == "ProductID" ? "DepartmentID" : "ListPrice";
+            var Product = from s in _context.Product
+                          select s;
+            switch (sortOrder)
+            {
+                case "ProductName":
+                    Product = Product.OrderByDescending(s => s.ProductName);
+                    break;
+                case "ProductID":
+                    Product = Product.OrderBy(s => s.ProductID);
+                    break;
+                case "DepartmentID":
+                    Product = Product.OrderByDescending(s => s.DepartmentID);
+                    break;
+                case "ListPrice":
+                    Product = Product.OrderBy(s => s.ListPrice);
+                    break;
+            }
+        
+            return View(await Product.AsNoTracking().ToListAsync());
         }
+        
 
         // GET: Products/Details/5 - Displays details for a specific product
         public async Task<IActionResult> Details(int? id)

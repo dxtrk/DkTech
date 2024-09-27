@@ -17,16 +17,16 @@
         <tr>
             <!-- Table headers for customer properties -->
             <th>
-                @Html.DisplayNameFor(model => model.Last_Name) // Displays the header for Last Name
+                @Html.DisplayNameFor(model => model.Last_Name) @* Displays the header for Last Name *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstMidName) // Displays the header for First Name
+                @Html.DisplayNameFor(model => model.FirstMidName) @* // Displays the header for First Name *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email) // Displays the header for Email
+                @Html.DisplayNameFor(model => model.Email) @* // Displays the header for Email *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OrderDate) // Displays the header for Order Date
+                @Html.DisplayNameFor(model => model.OrderDate) @* // Displays the header for Order Date *@
             </th>
             <th></th> <!-- Empty header for action links -->
         </tr>
@@ -37,16 +37,16 @@
             <tr>
                 <!-- Table cells displaying customer data -->
                 <td>
-                    @Html.DisplayFor(modelItem => item.Last_Name) // Displays Last Name
+                    @Html.DisplayFor(modelItem => item.Last_Name) @* // Displays Last Name *@
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstMidName) // Displays First Name
+                    @Html.DisplayFor(modelItem => item.FirstMidName) @* // Displays First Name *@
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Email) // Displays Email
+                    @Html.DisplayFor(modelItem => item.Email) @* // Displays Email *@
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.OrderDate) // Displays Order Date
+                    @Html.DisplayFor(modelItem => item.OrderDate) @* // Displays Order Date *@
                 </td>
                 <td>
                     <!-- Action links for editing, viewing details, and deleting a customer -->
